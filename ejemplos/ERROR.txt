@@ -1,0 +1,19 @@
+SUMAR_ERROR: MACRO num1, num2, ERROR
+    LD A, num1       
+    ADD num2       
+    LD (resultado), A 
+    LD (resultado), A 
+ENDM
+
+ORG 0000h
+
+NUM1: DB 5
+NUM2: DB 10
+RESULTADO: DB 0
+
+INICIO:
+    SUMAR_ERROR NUM1, NUM2, RESULTADO
+    JP FIN
+
+FIN:
+    JP FIN

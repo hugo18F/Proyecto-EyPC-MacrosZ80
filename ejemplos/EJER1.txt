@@ -1,0 +1,18 @@
+SUMAR: MACRO num1, num2, resultado
+    LD A, num1
+    ADD A, num2
+    LD (resultado), A
+ENDM
+
+ORG 0000h
+
+NUM1: DB 5
+NUM2: DB 10
+RESULT: DB 0
+
+INICIO:
+    SUMAR NUM1, NUM2, NUM3
+    JP FIN
+
+FIN:
+    JP FIN

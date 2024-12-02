@@ -1,0 +1,19 @@
+MULTIPLICAR: MACRO num1, num2, resultado
+    LD A, num1
+    LD B, num2
+    MUL B
+    LD (resultado), A
+ENDM
+
+ORG 0000h
+
+NUM1: DB 3
+NUM2: DB 4
+RESULTADO: DB 0
+
+INICIO:
+    MULTIPLICAR NUM1, NUM2, RESULTADO
+    JP FIN
+
+FIN:
+    JP FIN

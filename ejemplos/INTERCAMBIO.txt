@@ -1,0 +1,17 @@
+INTERCAMBIAR: MACRO reg1, reg2
+    LD A, reg1
+    LD reg1, reg2
+    LD reg2, A
+ENDM
+
+ORG 0000h
+
+REG1: DB 8
+REG2: DB 12
+
+INICIO:
+    INTERCAMBIAR REG1, REG2
+    JP FIN
+
+FIN:
+    JP FIN

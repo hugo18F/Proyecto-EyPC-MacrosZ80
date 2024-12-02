@@ -1,0 +1,17 @@
+SUMAR: MACRO num1, num2, resultado
+    LD A, num1
+    ADD num2
+    LD (resultado), A
+ENDM
+MULTIPLICAR: MACRO num1, num2, resultado
+    LD A, num1
+    LD B, num2
+    MUL B       
+    LD (resultado), A
+ENDM
+
+R: DB 0
+
+SUMAR 2, 2, R
+MULTIPLICAR 4, 4, R
+HALT

@@ -1,0 +1,11 @@
+VACIO: MACRO 
+ENDM
+
+ORG 0000h
+
+INICIO:
+    VACIO
+    JP FIN
+
+FIN:
+    JP FIN
